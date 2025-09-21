@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Product & Tech Consulting — MBA | APIs, Platforms, Commerce</title>
-  <meta name="description" content="MBA product builder open to product and tech consulting roles. APIs, platforms, growth, and content-driven commerce." />
+  <meta name="description" content="MBA product builder open to product and tech consulting internships. Product Management Intern, Project Management, TPM, and PPM roles." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0d0a1f;
@@ -44,7 +44,7 @@
       line-height:1.6;
       background:
         radial-gradient(1200px 600px at 20% -10%, rgba(164,139,255,0.22), transparent 50%),
-        radial-gradient(1000px 600px at 90% 10%, rgba(110,247,213,0.18), transparent 50%),
+        radial-gradient(1000px 600px at 90% 10%, rgba(110,247,213,0.20), transparent 50%),
         linear-gradient(180deg, var(--bg), var(--bg2) 40%, var(--bg));
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -54,28 +54,58 @@
     .wrap{
       max-width:1000px;
       margin:0 auto;
-      padding:28px 20px 100px;
+      padding:12px 20px 120px;
     }
+
+    /* Announcement bar */
+    .announce{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px 16px;
+      margin:12px 0 10px;
+      border-radius:14px;
+      background:linear-gradient(90deg, rgba(107,140,255,.30), rgba(110,247,213,.22));
+      border:1px solid rgba(255,255,255,0.22);
+      box-shadow:0 12px 32px rgba(60,90,255,.18);
+      flex-wrap:wrap;
+    }
+    .announce-label{
+      font-weight:600;
+      text-transform:capitalize;
+      letter-spacing:.08em;
+      color:#0b1220;
+      background:#e8ecff;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    @media (prefers-color-scheme: dark){
+      .announce-label{color:#11142a; background:#cfe0ff}
+    }
+    .announce-roles{color:#0b1220; opacity:.9}
+    @media (prefers-color-scheme: dark){
+      .announce-roles{color:#e9ecff; opacity:.95}
+    }
+    .announce-cta{
+      margin-left:auto;
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      color:#0b1220;
+      background:#abffea;
+      border:1px solid rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark){
+      .announce-cta{color:#0b1220; background:#6ef7d5}
+    }
+
     header{
       display:grid;
       grid-template-columns:1fr;
       gap:18px;
       margin-top:8px;
       margin-bottom:18px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:9px 14px;
-      border-radius:999px;
-      background:linear-gradient(90deg, rgba(164,139,255,.25), rgba(107,140,255,.25));
-      color:var(--text);
-      width:max-content;
-      font-weight:700;
-      letter-spacing:.01em;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,0.12);
     }
     .hero{
       display:grid;
@@ -154,27 +184,37 @@
       border:1px dashed rgba(255,255,255,0.22);
       box-shadow: 0 10px 24px rgba(110,247,213,.18);
     }
-    .right{padding:0; overflow:hidden}
-    .panel{height:100%; padding:24px; display:grid; gap:16px}
+
+    .right{padding:0; overflow:visible}
+    .panel{height:auto; padding:24px; display:grid; gap:16px}
     .panel h3{
       margin:0 0 6px 0;
       font-size:14px;
       text-transform:uppercase;
       letter-spacing:.12em;
       color:#cbd3ff;
+      position:sticky;
+      top:0;
+      background:transparent;
+      padding-top:4px;
     }
     .kv{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
     }
     .kpi{
-      padding:16px;
+      padding:18px;
       border-radius:12px;
       background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border:1px solid rgba(255,255,255,0.10);
+      min-height:120px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
     }
     .kpi b{font-size:22px; display:block; color:#eaeaff}
+
     section{margin-top:34px}
     section h2{
       margin:0 0 12px 0;
@@ -202,6 +242,7 @@
     li{margin:6px 0}
     .skills{display:flex; flex-wrap:wrap; gap:8px}
     .skills .pill{margin:0}
+
     footer{
       position:fixed;
       bottom:16px;
@@ -223,6 +264,7 @@
       box-shadow: var(--shadow);
     }
     .dock a{white-space:nowrap}
+
     :focus-visible{outline:none; box-shadow:var(--ring)}
     @media (prefers-reduced-motion: reduce){
       *{animation:none!important; transition:none!important}
@@ -231,13 +273,19 @@
 </head>
 <body>
   <div class="wrap">
+    <!-- Announcement bar -->
+    <div class="announce">
+      <span class="announce-label">Looking for Internships</span>
+      <span class="announce-roles">Product Management Intern • Project Management • Technical Consultant/Associate • Technical Product Manager </span>
+      <!-- <a class="announce-cta" href="#open-roles">CLooking for </a> -->
+    </div>
+
     <header>
-      <span class="badge">Open to Product & Tech Consulting</span>
       <div class="hero">
         <div class="left card">
           <h1>Hi, I'm a product builder for APIs, platforms, and content‑driven commerce</h1>
           <p class="subtitle">
-            Pursuing an MBA in Management Science at Boston University (Questrom). 6+ years across fintech, SaaS, and mobility, blending engineering rigor with product thinking to ship work that customers adopt and teams can scale. 
+            Pursuing an MBA in Management Science at Boston University (Questrom). 6+ years across fintech, SaaS, and mobility, blending engineering rigor with product thinking to ship work that customers adopt and teams can scale.
           </p>
           <p class="tone">
             What drives me: solving messy partner integrations, making docs and SDKs delightful, and turning ambiguous 0→1 ideas into shipped products.
@@ -254,6 +302,7 @@
             <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
           </div>
         </div>
+
         <div class="right card">
           <div class="panel">
             <h3>Highlights</h3>
@@ -262,6 +311,7 @@
               <div class="kpi"><b>−27%</b> churn from lifecycle nudges and pricing tests</div>
               <div class="kpi"><b>3→9</b> integrations launched across payments, catalog, and fulfillment</div>
             </div>
+
             <h3>Now exploring</h3>
             <div class="kv">
               <div class="kpi">Product & tech consulting engagements</div>
@@ -272,6 +322,39 @@
         </div>
       </div>
     </header>
+
+    <section>
+      <h2>Open internship roles</h2>
+      <div class="list" id="open-roles">
+        <article class="item">
+          <header>
+            <div class="role">Product Management Intern</div>
+            <div class="meta">Summer 2026 · MBA</div>
+          </header>
+          <ul>
+            <li>0→1 and platform/API initiatives, partner integrations, and content‑commerce tooling.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header>
+            <div class="role">Project Management (Intern)</div>
+            <div class="meta">Summer 2026</div>
+          </header>
+          <ul>
+            <li>Cross‑functional delivery, GTM readiness, and execution for integrations and SDKs.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header>
+            <div class="role">TPM / PPM (Intern)</div>
+            <div class="meta">Summer 2026</div>
+          </header>
+          <ul>
+            <li>Technical roadmaps, dependency management, and platform health/telemetry programs.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
     <section>
       <h2>Experience</h2>
@@ -326,7 +409,7 @@
       </div>
     </section>
 
-    <section>
+<!--     <section>
       <h2>Selected projects</h2>
       <div class="list">
         <article class="item">
@@ -351,7 +434,7 @@
           </ul>
         </article>
       </div>
-    </section>
+    </section> -->
 
     <section>
       <h2>Skills</h2>
@@ -368,29 +451,13 @@
         <span class="pill">Platforms</span>
       </div>
     </section>
-
-    <section>
-      <h2>Outside work</h2>
-      <div class="list">
-        <article class="item">
-          <header>
-            <div class="role">Community & hobbies</div>
-            <div class="meta">Always curious</div>
-          </header>
-          <ul>
-            <li>Mentor early‑stage builders on APIs, docs, and platform strategy.</li>
-            <li>Enjoy long runs, espresso dialing, and tinkering with tiny dashboards.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   </div>
 
   <footer>
     <nav class="dock">
-      <a class="btn" href="mailto:firstname.lastname@email.com">Contact</a>
-      <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="mailto:anant.dimri96@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/anant-dimri96/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn secondary" href="/Anant_Dimri_Resume_product.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
   </footer>
 </body>
