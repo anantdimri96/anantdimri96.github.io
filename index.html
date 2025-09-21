@@ -1,113 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anant Dimri | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Leader — MBA | APIs, Platforms, E‑commerce</title>
+  <meta name="description" content="MBA product leader specializing in APIs, open platforms, and content-driven e‑commerce. 6+ years across fintech, SaaS, and mobility." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#111217;
+      --text:#e7e9ee;
+      --muted:#99a2b2;
+      --brand:#5b9cff;
+      --accent:#7cf1c6;
+      --ring: 0 0 0 3px rgba(91,156,255,.35);
+      --radius:14px;
+      --shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc;
+        --card:#ffffff;
+        --text:#0b1220;
+        --muted:#5b6475;
+        --brand:#2b6aff;
+        --accent:#0fbf92;
+        --shadow: 0 12px 30px rgba(2,6,23,0.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#0e1116 35%, var(--bg));
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      max-width:1000px;
+      margin:0 auto;
+      padding:28px 20px 80px;
+    }
+    header{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:8px;
+      margin-bottom:18px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:linear-gradient(180deg, rgba(124,241,198,.18), rgba(91,156,255,.18));
+      color:var(--text);
+      width:max-content;
+      font-weight:600;
+      box-shadow:var(--shadow);
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero .left{
+      padding:28px;
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size: clamp(28px, 4.2vw, 42px);
+      line-height:1.1;
+      letter-spacing:-0.01em;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size: clamp(15px, 2.2vw, 18px);
+      margin-bottom:18px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(124,241,198,0.12);
+      color:var(--text);
+      margin-right:8px;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,0.12);
+      background:linear-gradient(180deg, rgba(91,156,255,.14), rgba(91,156,255,.04));
+      color:var(--text);
+      text-decoration:none;
+      transition:transform .06s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{
+      background:transparent;
+      border:1px dashed rgba(255,255,255,0.18);
+    }
+    .hero .right{
+      padding:0;
+      overflow:hidden;
+    }
+    .panel{
+      height:100%;
+      padding:24px;
+      display:grid;
+      gap:14px;
+    }
+    .panel h3{
+      margin:0 0 6px 0;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
+    .kv{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+    .kpi{
+      padding:16px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .kpi b{font-size:22px; display:block}
+    section{margin-top:34px}
+    section h2{
+      margin:0 0 12px 0;
+      font-size:20px;
+      letter-spacing:-0.01em;
+    }
+    .list{
+      display:grid;
+      gap:14px;
+    }
+    .item{
+      padding:18px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .item header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin:0 0 4px 0;
+    }
+    .role{
+      font-weight:700;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:14px;
+    }
+    ul{
+      margin:8px 0 0 18px;
+      padding:0;
+    }
+    li{margin:6px 0}
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .skills .pill{margin:0}
+    footer{
+      position:fixed;
+      bottom:16px;
+      right:16px;
+      left:16px;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .dock{
+      pointer-events:auto;
+      display:flex;
+      gap:10px;
+      padding:10px 12px;
+      background:rgba(16,18,24,0.75);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border-radius:999px;
+      box-shadow: var(--shadow);
+    }
+    .dock a{white-space:nowrap}
+    /* Accessibility */
+    :focus-visible{outline:none; box-shadow:var(--ring)}
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important; transition:none!important}
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Open to Product Internships</span>
+      <div class="hero">
+        <div class="left card">
+          <h1>Product builder for APIs, platforms, and content‑driven commerce</h1>
+          <p class="subtitle">
+            MBA in Management Science at Boston University (Questrom). 6+ years across fintech, SaaS, and mobility, building products that drive adoption, retention, and growth. Previously engineering lead; now focused on 0→1, GTM, and partner ecosystems. 
+          </p>
+          <div>
+            <span class="pill">APIs & Integrations</span>
+            <span class="pill">Open Platforms</span>
+            <span class="pill">Seller/Partner Ecosystems</span>
+            <span class="pill">Growth & Analytics</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="mailto:firstname.lastname@email.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+          </div>
+        </div>
+        <div class="right card">
+          <div class="panel">
+            <h3>Highlights</h3>
+            <div class="kv">
+              <div class="kpi"><b>+38%</b> activation via partner API onboarding revamp</div>
+              <div class="kpi"><b>−27%</b> churn from lifecycle nudges and pricing tests</div>
+              <div class="kpi"><b>3→9</b> integrations launched across payments, catalog, and fulfillment</div>
+            </div>
+            <h3>Focus now</h3>
+            <div class="kv">
+              <div class="kpi">TikTok & content commerce enablement</div>
+              <div class="kpi">Partner marketplaces & SDKs</div>
+              <div class="kpi">Platform health & telemetry</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  <!-- Header -->
-  <header class="bg-white shadow p-6 sticky top-0 z-50 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Anant Dimri</h1>
-    <nav class="space-x-4">
-      <a href="#about" class="hover:text-blue-600">About</a>
-      <a href="#experience" class="hover:text-blue-600">Experience</a>
-      <a href="#products" class="hover:text-blue-600">Products</a>
-      <a href="#skills" class="hover:text-blue-600">Skills</a>
-      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    <section>
+      <h2>Experience</h2>
+      <div class="list">
+        <article class="item">
+          <header>
+            <div class="role">Technical Lead — Strategic Initiatives</div>
+            <div class="meta">2023–2024 · Fintech SaaS</div>
+          </header>
+          <ul>
+            <li>Owned partner platform roadmap (auth, catalog, payments APIs); shipped SDKs that cut integration time from ~6 weeks to 2.5 weeks.</li>
+            <li>Defined activation metrics, launched guided onboarding, and improved partner success rate by 38% within two quarters.</li>
+            <li>Negotiated co-marketing with 4 marketplace partners; drove 19% MoM sign‑up lift through joint webinars and templates.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <header>
+            <div class="role">Senior Software Engineer — Payments</div>
+            <div class="meta">2021–2023 · Mobility</div>
+          </header>
+          <ul>
+            <li>Led payment orchestration stack migration; reduced authorization failures by 22% with smart routing and 3DS step‑up rules.</li>
+            <li>Shipped refund and ledger APIs, enabling self‑serve merchant tools and cutting support tickets by 30%.</li>
+            <li>Partnered with Risk to add device fingerprinting; lowered fraud loss rate by 18% while preserving conversion.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <header>
+            <div class="role">Senior Software Engineer — Growth</div>
+            <div class="meta">2020–2021 · SaaS</div>
+          </header>
+          <ul>
+            <li>Built experimentation platform (feature flags, CUPED, sequential testing) that increased test velocity by 3×.</li>
+            <li>Implemented lifecycle nudges and pricing experiments; reduced churn by 27% in SMB cohort.</li>
+            <li>Launched referrals API and partner portal; sourced 12% of new paid signups via ecosystem channels.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <header>
+            <div class="role">Software Engineer — Platform</div>
+            <div class="meta">2018–2020 · SaaS</div>
+          </header>
+          <ul>
+            <li>Designed multi‑tenant service boundaries; improved p95 latency by 41% after decomposing critical paths.</li>
+            <li>Introduced API versioning and deprecation policy; cut integration breakages to near zero during releases.</li>
+            <li>Auth revamp with OIDC + SCIM; decreased enterprise onboarding time from 10 days to 3 days.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected projects</h2>
+      <div class="list">
+        <article class="item">
+          <header>
+            <div class="role">Content‑commerce starter for TikTok Shop</div>
+            <div class="meta">2024 · Open source</div>
+          </header>
+          <ul>
+            <li>Template that syncs catalog, creators, and attribution; accelerates onboarding for sellers and agencies.</li>
+            <li>Includes webhook relays, order sync, and creator payout reporting with a minimal Next.js admin.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <header>
+            <div class="role">Partner telemetry dashboard</div>
+            <div class="meta">2023 · Internal</div>
+          </header>
+          <ul>
+            <li>Unified API health, SLA, and partner adoption in one view; reduced time‑to‑root‑cause by 45%.</li>
+            <li>Shipped as a reusable design system block; adopted by three internal teams.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="pill">Product Discovery</span>
+        <span class="pill">Roadmaps & OKRs</span>
+        <span class="pill">APIs & Webhooks</span>
+        <span class="pill">SDKs & Docs</span>
+        <span class="pill">Experimentation</span>
+        <span class="pill">Analytics & SQL</span>
+        <span class="pill">Payments</span>
+        <span class="pill">Security & Identity</span>
+        <span class="pill">E‑commerce</span>
+        <span class="pill">Platforms</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Speaking & writing</h2>
+      <div class="list">
+        <article class="item">
+          <header>
+            <div class="role">Designing partner‑first APIs</div>
+            <div class="meta">Talk</div>
+          </header>
+          <ul>
+            <li>Patterns for versioning, deprecation, and docs that reduce partner friction.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header>
+            <div class="role">Measuring platform health</div>
+            <div class="meta">Essay</div>
+          </header>
+          <ul>
+            <li>North‑star metrics beyond request counts: activation, time‑to‑first‑value, and expansion.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <nav class="dock">
+      <a class="btn" href="mailto:firstname.lastname@email.com">Contact</a>
+      <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
-  </header>
-
-  <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-4">About Me</h2>
-    <p class="text-lg">
-      I’m pursuing an MBA in Management Science at Boston University (Questrom), with a focus on Product, Strategy, and Analytics. 
-      With 6+ years of experience in tech and product roles across fintech, SaaS, and mobility startups, I enjoy building impactful 
-      products that drive adoption, retention, and growth.
-    </p>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="bg-white p-8 shadow-sm">
-    <h2 class="text-3xl font-bold mb-6">Experience</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="font-bold text-xl">Hiver Inc (2023 - 2025)</h3>
-        <p class="text-sm text-gray-600">Technical Lead – Strategic Initiatives</p>
-        <ul class="list-disc list-inside mt-2">
-          <li>Launched Outlook client → 10M+ emails, $350K+ ARR.</li>
-          <li>AI-driven support → 40% faster resolution, +CSAT.</li>
-          <li>Infra optimization → 65% faster deployments, $55K savings.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl">Simpl Inc (2022 - 2023)</h3>
-        <p class="text-sm text-gray-600">Senior Software Engineer – Payments</p>
-        <ul class="list-disc list-inside mt-2">
-          <li>Payment gateway → unlocked $250K annual revenue.</li>
-          <li>Autopay → +0.5% success rate, $80K growth.</li>
-          <li>Partial payments → boosted recovery by $48K.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl">Zoomcar Inc (2021 - 2022)</h3>
-        <p class="text-sm text-gray-600">Senior Software Engineer – Growth</p>
-        <ul class="list-disc list-inside mt-2">
-          <li>Offer Engine → +55% personalization, +10% engagement.</li>
-          <li>Referral revamp → 500K+ new users, $1.5M ARR.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl">Kuvera (2019 - 2021)</h3>
-        <p class="text-sm text-gray-600">Software Engineer – Platform</p>
-        <ul class="list-disc list-inside mt-2">
-          <li>Kuvera Insights → 1M+ investors engaged.</li>
-          <li>Real-time updates → 70% faster release cycles.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="max-w-4xl mx-auto p-8">
-    <h2 class="text-3xl font-bold mb-6">Products</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li>Outlook Email Client (10M+ emails, $350K+ ARR)</li>
-      <li>AI-driven Support Platform (5K+ queries/day)</li>
-      <li>Payment Gateway (Simpl, $250K unlocked)</li>
-      <li>Offer Engine (Zoomcar, +55% personalization)</li>
-      <li>Kuvera Insights (1M+ investors)</li>
-    </ul>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="bg-white shadow-sm p-8">
-    <h2 class="text-3xl font-bold mb-6">Skills</h2>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="p-4 border rounded">Product Strategy & Growth</div>
-      <div class="p-4 border rounded">A/B Testing & Analytics (Tableau, Looker, Metabase)</div>
-      <div class="p-4 border rounded">Technical: Python, Ruby, SQL, APIs, AWS, Kubernetes</div>
-      <div class="p-4 border rounded">Agile, GTM, AARRR Metrics, Funnel Analysis</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="max-w-4xl mx-auto p-8 text-center">
-    <h2 class="text-3xl font-bold mb-6">Contact</h2>
-    <p class="mb-4">Let’s connect!</p>
-    <div class="space-x-4">
-      <a href="mailto:anantd@bu.edu" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Email</a>
-      <a href="https://linkedin.com/in/anant-dimri96" target="_blank" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900">LinkedIn</a>
-      <a href="Anant_Dimri_Resume_product.pdf" download class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Download Resume</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white shadow p-6 text-center mt-12">
-    <p>© 2025 Anant Dimri. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
