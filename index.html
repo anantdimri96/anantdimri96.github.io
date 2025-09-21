@@ -3,32 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Leader — MBA | APIs, Platforms, E‑commerce</title>
-  <meta name="description" content="MBA product leader specializing in APIs, open platforms, and content-driven e‑commerce. 6+ years across fintech, SaaS, and mobility." />
+  <title>Product & Tech Consulting — MBA | APIs, Platforms, Commerce</title>
+  <meta name="description" content="MBA product builder open to product and tech consulting roles. APIs, platforms, growth, and content-driven commerce." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0c10;
-      --card:#111217;
-      --text:#e7e9ee;
-      --muted:#99a2b2;
-      --brand:#5b9cff;
-      --accent:#7cf1c6;
-      --ring: 0 0 0 3px rgba(91,156,255,.35);
-      --radius:14px;
-      --shadow: 0 8px 30px rgba(0,0,0,0.35);
+      --bg:#0d0a1f;
+      --bg2:#0b1029;
+      --card:#12102a;
+      --text:#f3f4f8;
+      --muted:#a9b0c7;
+      --brand:#6b8cff;  /* indigo */
+      --accent:#6ef7d5; /* teal-mint */
+      --violet:#a48bff; /* violet */
+      --ring: 0 0 0 3px rgba(110,247,213,.35);
+      --radius:16px;
+      --shadow: 0 16px 40px rgba(5,8,22,.55);
     }
     @media (prefers-color-scheme: light){
       :root{
-        --bg:#f8fafc;
+        --bg:#f7f7ff;
+        --bg2:#eef0ff;
         --card:#ffffff;
         --text:#0b1220;
-        --muted:#5b6475;
-        --brand:#2b6aff;
-        --accent:#0fbf92;
-        --shadow: 0 12px 30px rgba(2,6,23,0.08);
+        --muted:#5c6888;
+        --brand:#3d5bfd;
+        --accent:#00cfac;
+        --violet:#7c5cff;
+        --shadow: 0 18px 40px rgba(21,24,40,.08);
       }
     }
     *{box-sizing:border-box}
@@ -36,9 +40,12 @@
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:linear-gradient(180deg,var(--bg),#0e1116 35%, var(--bg));
       color:var(--text);
       line-height:1.6;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(164,139,255,0.22), transparent 50%),
+        radial-gradient(1000px 600px at 90% 10%, rgba(110,247,213,0.18), transparent 50%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 40%, var(--bg));
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
@@ -47,7 +54,7 @@
     .wrap{
       max-width:1000px;
       margin:0 auto;
-      padding:28px 20px 80px;
+      padding:28px 20px 100px;
     }
     header{
       display:grid;
@@ -60,13 +67,15 @@
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding:8px 12px;
+      padding:9px 14px;
       border-radius:999px;
-      background:linear-gradient(180deg, rgba(124,241,198,.18), rgba(91,156,255,.18));
+      background:linear-gradient(90deg, rgba(164,139,255,.25), rgba(107,140,255,.25));
       color:var(--text);
       width:max-content;
-      font-weight:600;
+      font-weight:700;
+      letter-spacing:.01em;
       box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.12);
     }
     .hero{
       display:grid;
@@ -77,24 +86,33 @@
       .hero{grid-template-columns:1fr}
     }
     .card{
-      background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));
-      border:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.10);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
     }
-    .hero .left{
-      padding:28px;
-    }
+    .hero .left{padding:30px}
     h1{
       margin:0 0 10px 0;
-      font-size: clamp(28px, 4.2vw, 42px);
-      line-height:1.1;
+      font-size: clamp(30px, 4.4vw, 46px);
+      line-height:1.08;
       letter-spacing:-0.01em;
+      background: linear-gradient(90deg, var(--text), #cfd5ff 40%, #b8a8ff 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color:transparent;
     }
     .subtitle{
+      color:var(--text);
+      opacity:.95;
+      font-size: clamp(16px, 2.2vw, 18px);
+      margin-bottom:16px;
+    }
+    .tone{
       color:var(--muted);
-      font-size: clamp(15px, 2.2vw, 18px);
-      margin-bottom:18px;
+      margin-top:2px;
+      margin-bottom:20px;
     }
     .pill{
       display:inline-flex;
@@ -102,53 +120,48 @@
       gap:8px;
       padding:8px 12px;
       border-radius:999px;
-      background:rgba(124,241,198,0.12);
+      background:linear-gradient(90deg, rgba(110,247,213,.15), rgba(164,139,255,.15));
       color:var(--text);
       margin-right:8px;
       margin-bottom:8px;
       font-weight:600;
+      border:1px solid rgba(255,255,255,0.12);
     }
     .cta{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:12px;
+      margin-top:14px;
     }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding:12px 16px;
-      border-radius:10px;
-      font-weight:600;
-      border:1px solid rgba(255,255,255,0.12);
-      background:linear-gradient(180deg, rgba(91,156,255,.14), rgba(91,156,255,.04));
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,0.16);
+      background:linear-gradient(135deg, rgba(107,140,255,.28), rgba(164,139,255,.22));
       color:var(--text);
       text-decoration:none;
-      transition:transform .06s ease;
+      transition:transform .08s ease, box-shadow .08s ease;
+      box-shadow: 0 10px 24px rgba(107,140,255,.18);
     }
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{transform:translateY(-2px); box-shadow: 0 14px 28px rgba(107,140,255,.24)}
     .btn.secondary{
-      background:transparent;
-      border:1px dashed rgba(255,255,255,0.18);
+      background:linear-gradient(135deg, rgba(110,247,213,.25), rgba(107,140,255,.15));
+      border:1px dashed rgba(255,255,255,0.22);
+      box-shadow: 0 10px 24px rgba(110,247,213,.18);
     }
-    .hero .right{
-      padding:0;
-      overflow:hidden;
-    }
-    .panel{
-      height:100%;
-      padding:24px;
-      display:grid;
-      gap:14px;
-    }
+    .right{padding:0; overflow:hidden}
+    .panel{height:100%; padding:24px; display:grid; gap:16px}
     .panel h3{
       margin:0 0 6px 0;
       font-size:14px;
       text-transform:uppercase;
       letter-spacing:.12em;
-      color:var(--muted);
+      color:#cbd3ff;
     }
     .kv{
       display:grid;
@@ -158,25 +171,23 @@
     .kpi{
       padding:16px;
       border-radius:12px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.10);
     }
-    .kpi b{font-size:22px; display:block}
+    .kpi b{font-size:22px; display:block; color:#eaeaff}
     section{margin-top:34px}
     section h2{
       margin:0 0 12px 0;
       font-size:20px;
       letter-spacing:-0.01em;
+      color:#eaeaff;
     }
-    .list{
-      display:grid;
-      gap:14px;
-    }
+    .list{display:grid; gap:14px}
     .item{
       padding:18px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.10);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
     }
     .item header{
       display:flex;
@@ -185,23 +196,11 @@
       gap:10px;
       margin:0 0 4px 0;
     }
-    .role{
-      font-weight:700;
-    }
-    .meta{
-      color:var(--muted);
-      font-size:14px;
-    }
-    ul{
-      margin:8px 0 0 18px;
-      padding:0;
-    }
+    .role{font-weight:800}
+    .meta{color:#c1c6e3; font-size:14px}
+    ul{margin:8px 0 0 18px; padding:0}
     li{margin:6px 0}
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
+    .skills{display:flex; flex-wrap:wrap; gap:8px}
     .skills .pill{margin:0}
     footer{
       position:fixed;
@@ -217,14 +216,13 @@
       display:flex;
       gap:10px;
       padding:10px 12px;
-      background:rgba(16,18,24,0.75);
-      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(15,18,38,0.75);
+      border:1px solid rgba(255,255,255,0.14);
       backdrop-filter: blur(10px);
       border-radius:999px;
       box-shadow: var(--shadow);
     }
     .dock a{white-space:nowrap}
-    /* Accessibility */
     :focus-visible{outline:none; box-shadow:var(--ring)}
     @media (prefers-reduced-motion: reduce){
       *{animation:none!important; transition:none!important}
@@ -234,17 +232,20 @@
 <body>
   <div class="wrap">
     <header>
-      <span class="badge">Open to Product Internships</span>
+      <span class="badge">Open to Product & Tech Consulting</span>
       <div class="hero">
         <div class="left card">
-          <h1>Product builder for APIs, platforms, and content‑driven commerce</h1>
+          <h1>Hi, I'm a product builder for APIs, platforms, and content‑driven commerce</h1>
           <p class="subtitle">
-            MBA in Management Science at Boston University (Questrom). 6+ years across fintech, SaaS, and mobility, building products that drive adoption, retention, and growth. Previously engineering lead; now focused on 0→1, GTM, and partner ecosystems. 
+            Pursuing an MBA in Management Science at Boston University (Questrom). 6+ years across fintech, SaaS, and mobility, blending engineering rigor with product thinking to ship work that customers adopt and teams can scale. 
+          </p>
+          <p class="tone">
+            What drives me: solving messy partner integrations, making docs and SDKs delightful, and turning ambiguous 0→1 ideas into shipped products.
           </p>
           <div>
             <span class="pill">APIs & Integrations</span>
             <span class="pill">Open Platforms</span>
-            <span class="pill">Seller/Partner Ecosystems</span>
+            <span class="pill">Tech Consulting</span>
             <span class="pill">Growth & Analytics</span>
           </div>
           <div class="cta">
@@ -261,11 +262,11 @@
               <div class="kpi"><b>−27%</b> churn from lifecycle nudges and pricing tests</div>
               <div class="kpi"><b>3→9</b> integrations launched across payments, catalog, and fulfillment</div>
             </div>
-            <h3>Focus now</h3>
+            <h3>Now exploring</h3>
             <div class="kv">
-              <div class="kpi">TikTok & content commerce enablement</div>
+              <div class="kpi">Product & tech consulting engagements</div>
+              <div class="kpi">Content commerce and creator tooling</div>
               <div class="kpi">Partner marketplaces & SDKs</div>
-              <div class="kpi">Platform health & telemetry</div>
             </div>
           </div>
         </div>
@@ -283,7 +284,7 @@
           <ul>
             <li>Owned partner platform roadmap (auth, catalog, payments APIs); shipped SDKs that cut integration time from ~6 weeks to 2.5 weeks.</li>
             <li>Defined activation metrics, launched guided onboarding, and improved partner success rate by 38% within two quarters.</li>
-            <li>Negotiated co-marketing with 4 marketplace partners; drove 19% MoM sign‑up lift through joint webinars and templates.</li>
+            <li>Negotiated co‑marketing with 4 marketplace partners; drove 19% MoM sign‑up lift through joint webinars and templates.</li>
           </ul>
         </article>
 
@@ -293,7 +294,7 @@
             <div class="meta">2021–2023 · Mobility</div>
           </header>
           <ul>
-            <li>Led payment orchestration stack migration; reduced authorization failures by 22% with smart routing and 3DS step‑up rules.</li>
+            <li>Led payment orchestration migration; reduced authorization failures by 22% with smart routing and 3DS step‑up rules.</li>
             <li>Shipped refund and ledger APIs, enabling self‑serve merchant tools and cutting support tickets by 30%.</li>
             <li>Partnered with Risk to add device fingerprinting; lowered fraud loss rate by 18% while preserving conversion.</li>
           </ul>
@@ -369,24 +370,16 @@
     </section>
 
     <section>
-      <h2>Speaking & writing</h2>
+      <h2>Outside work</h2>
       <div class="list">
         <article class="item">
           <header>
-            <div class="role">Designing partner‑first APIs</div>
-            <div class="meta">Talk</div>
+            <div class="role">Community & hobbies</div>
+            <div class="meta">Always curious</div>
           </header>
           <ul>
-            <li>Patterns for versioning, deprecation, and docs that reduce partner friction.</li>
-          </ul>
-        </article>
-        <article class="item">
-          <header>
-            <div class="role">Measuring platform health</div>
-            <div class="meta">Essay</div>
-          </header>
-          <ul>
-            <li>North‑star metrics beyond request counts: activation, time‑to‑first‑value, and expansion.</li>
+            <li>Mentor early‑stage builders on APIs, docs, and platform strategy.</li>
+            <li>Enjoy long runs, espresso dialing, and tinkering with tiny dashboards.</li>
           </ul>
         </article>
       </div>
